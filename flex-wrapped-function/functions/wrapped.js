@@ -42,7 +42,7 @@ exports.handler = async (context, event, callback) => {
   response.appendHeader("Access-Control-Allow-Headers", "Content-Type");
 
   try {
-    const results = await getData(event.agentId);
+    const results = await getData(event.workerSid);
     response.appendHeader("Content-Type", "application/json");
     response.setBody(results);
   } catch (error) {
